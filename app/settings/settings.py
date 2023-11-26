@@ -20,27 +20,32 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-z75^qpoeyf0fv%s#vmh7lrm0vr$j+n3j_ggxp02ffh%sh)m=sh"
+SECRET_KEY = "django-insecure-7@m4s#=6xaiig+k*wc&2+o8cg(+p6!(uy(ly7%hi%!l_q%pwde"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]  # приймати від будь кого
+ALLOWED_HOSTS = ["*"]
 
 
-# Application definition - вбудовані аплікейшени - first
-# Second - pip instal apps - calanders, apps for captcha
-# THIRDPARTY APPLICATION - our own applications
-
-INSTALLED_APPS = [
+# Application definition
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+]
+EXTERNAL_APPS = [
+    "django_extensions",
+]
+INTERNAL_APPS = [
     "currency",
 ]
+
+
+INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
